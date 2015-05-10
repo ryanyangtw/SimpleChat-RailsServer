@@ -6,6 +6,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
+  # fog is not work
   CarrierWave.configure do |config|
     config.storage    = :aws
     config.aws_bucket = ENV['AWS_BUCKET']

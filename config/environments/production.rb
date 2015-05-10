@@ -77,7 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # #Add for Heroku, It should be deleted after migrate to AWS
+    # #Add for Heroku, It should be deleted after migrate to AWS
   CarrierWave.configure do |config|
    
     config.storage :fog

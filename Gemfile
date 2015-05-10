@@ -36,7 +36,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'devise'
 
-gem 'carrierwave'
+gem 'carrierwave', "~> 0.10.0"
 gem "fog", "~> 1.23.0"
 #gem "fog-aws"
 gem 'mini_magick'

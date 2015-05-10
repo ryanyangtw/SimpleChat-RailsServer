@@ -37,7 +37,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 
 gem 'carrierwave'
-gem 'fog'
+gem "fog", "~> 1.23.0"
 #gem "fog-aws"
 gem 'mini_magick'
 

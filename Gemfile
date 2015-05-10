@@ -37,8 +37,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 
 gem 'carrierwave'
-#gem 'fog'
-gem "fog-aws"
+gem 'fog'
+#gem "fog-aws"
 gem 'mini_magick'
 
 gem 'simple_form'

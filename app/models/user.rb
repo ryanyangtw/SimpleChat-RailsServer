@@ -13,8 +13,19 @@ class User < ActiveRecord::Base
   has_many :messages, dependent: :destroy
 
 
-  def send_notigication
+  def send_notigication(message)
     puts "user: #{self.name} will norification self"
+
+
+    data = { :alert => message }
+    push = Parse::Push.new(data)
+    #push.type = "ios"
+    #query = Parse::Query.new("GameScore").eq("playerName", "Sean Plott")
+    query = Parse::Query.new(Parse::Protocol::CLASS_INSTALLATION).eq('userId', self.id)
+    
+    push.where = query.where
+    push.save
+
   end
 
 

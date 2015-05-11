@@ -62,6 +62,9 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'api-pagination'
 
+# Parse
+gem "parse-ruby-client"
+
 # Add fot Hroku
 group :production do
   gem 'rails_12factor'

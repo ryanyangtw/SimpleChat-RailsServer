@@ -52,6 +52,7 @@ module API
         desc "Notification list of users in specific room"
         params do
           optional :user_ids, type: String
+          optional :message, type: String
         end
         post "/:id/notification" do
           
@@ -62,7 +63,7 @@ module API
           members_who_did_not_get_message = User.find(member_ids_who_did_not_get_message)
 
           members_who_did_not_get_message.each do |member|
-            member.send_notigication
+            member.send_notigication(params[:message])
           end
 
         end

@@ -55,7 +55,7 @@ module API
           optional :message, type: String
         end
         post "/:id/notification" do
-          binding.pry
+ 
           room = Room.find(params[:id])
           all_member_ids = room.user_ids
           member_ids_who_has_get_message = params[:user_ids].split(",").map { |id| id.to_i }

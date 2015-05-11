@@ -1,5 +1,5 @@
 require 'parse-ruby-client'
 
-Parse.init :application_id => "EFxfBlIuQOCs1HGy0lNNTGyU7mBNYAu5fRKugSxc",
-           :api_key        => "6eRVHGaSDiIC9aY1dQwedU0Eb4Sc0Difzm7hY4zb",
+Parse.init :application_id => ENV['PARSE_APPLICATION_ID'], 
+           :api_key        => ENV['PARSE_API_KEY'],  
            :quiet          => true | false  

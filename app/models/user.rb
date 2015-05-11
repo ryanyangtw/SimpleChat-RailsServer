@@ -14,10 +14,10 @@ class User < ActiveRecord::Base
 
 
   def send_notigication(message)
-    puts "user: #{self.name} will norification self"
+    puts "user: #{self.name} will norification self, message: #{message}"
 
 
-    data = { :alert => message }
+    data = { alert: message }
     push = Parse::Push.new(data)
     #push.type = "ios"
     #query = Parse::Query.new("GameScore").eq("playerName", "Sean Plott")

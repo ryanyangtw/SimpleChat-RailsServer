@@ -13,10 +13,10 @@ class User < ActiveRecord::Base
   has_many :messages, dependent: :destroy
 
 
-  def send_notigication(message)
+  def send_notigication(sender, message)
     puts "user: #{self.name} will norification self, message: #{message}"
 
-    norification = "#{self.name}: #{message}"
+    norification = "#{sender.name}: #{message}"
     data = { alert: norification }
     push = Parse::Push.new(data)
     #push.type = "ios"

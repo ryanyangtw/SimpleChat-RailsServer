@@ -100,13 +100,34 @@ module API
         end
 
 
+        # desc "Notification list of users in specific room"
+        # params do
+        #   optional :user_ids, type: String
+        # end
+        # post "/notification" do
+        #   binding.pry
+        #   user_ids_arr = params[:user_ids].split(",")
+
+        # end
+
+
         desc "Notification list of users in specific room"
         params do
           optional :user_ids, type: String
+          optional :message, type: String
         end
-        post "/notification" do
-          binding.pry
-          user_ids_arr = params[:user_ids].split(",")
+        post "/:user_id/rooms/:id/notification" do
+ 
+          sender = User.find(params[:user_id])
+          room = Room.find(params[:id])
+          all_member_ids = room.user_ids
+          member_ids_who_has_get_message = params[:user_ids].split(",").map { |id| id.to_i }
+          member_ids_who_did_not_get_message = all_member_ids - member_ids_who_has_get_message
+          members_who_did_not_get_message = User.find(member_ids_who_did_not_get_message)
+
+          members_who_did_not_get_message.each do |member|
+            member.send_notigication(sender, params[:message])
+          end
 
         end
 
